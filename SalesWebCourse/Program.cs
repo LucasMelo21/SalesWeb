@@ -1,12 +1,15 @@
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using SalesWebCourse.Data;
-var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContext<SalesWebCourseContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("SalesWebCourseContext") ?? throw new InvalidOperationException("Connection string 'SalesWebCourseContext' not found.")));
+
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<SalesWebCourseContext>(options =>
+    options.UseNpgsql(
+        builder.Configuration.GetConnectionString("SalesWebCourseContext"),
+        npgsqlOptions => npgsqlOptions.MigrationsAssembly("SalesWebCourse")));
 
 var app = builder.Build();
 
