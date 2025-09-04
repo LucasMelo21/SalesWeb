@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using SalesWebCourse.Data;
@@ -11,9 +12,11 @@ using SalesWebCourse.Data;
 namespace SalesWebCourse.Migrations
 {
     [DbContext(typeof(SalesWebCourseContext))]
-    partial class SalesWebCourseContextModelSnapshot : ModelSnapshot
+    [Migration("20250904140125_OtherEntities")]
+    partial class OtherEntities
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

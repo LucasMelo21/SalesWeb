@@ -15,5 +15,7 @@ namespace SalesWebCourse.Data
         }
 
         public DbSet<SalesWebCourse.Models.Department> Department { get; set; } = default!;
+        public DbSet<SalesWebCourse.Models.Seller> Seller { get; set; } = default!;
+        public DbSet<SalesWebCourse.Models.SalesRecord> SalesRecord { get; set; } = default!;
     }
 }
