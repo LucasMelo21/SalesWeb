@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using SalesWebCourse.Services;
 using SalesWebCourse.Data;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
@@ -12,7 +13,7 @@ builder.Services.AddDbContext<SalesWebCourseContext>(options =>
         npgsqlOptions => npgsqlOptions.MigrationsAssembly("SalesWebCourse")));
 
         builder.Services.AddScoped<SeedingService>();
-
+        builder.Services.AddScoped<SellerService>();
 WebApplication app = builder.Build();
 
 // Configure the HTTP request pipeline.
