@@ -2,6 +2,8 @@ using Microsoft.EntityFrameworkCore;
 using SalesWebCourse.Services;
 using SalesWebCourse.Data;
 
+
+AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
