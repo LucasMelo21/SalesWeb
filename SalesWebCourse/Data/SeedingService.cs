@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using SalesWebCourse.Models;
+using SalesWebCourse.Models.ViewModels;
 using SalesWebCourse.Models.Enums;
 namespace SalesWebCourse.Data
 {
@@ -34,7 +35,7 @@ namespace SalesWebCourse.Data
             _context.Department.AddRange(d1, d2, d3, d4);
             _context.SaveChanges();
 
-            Seller s1 = new Seller {Name = "Bob Brown", Email = "bob@gmail.com", BirthDate =  new DateTime(1998, 4, 21).ToUniversalTime(), BaseSalary = 1000.0, Department = d1 };
+            Seller s1 = new Seller { Name = "Bob Brown", Email = "bob@gmail.com", BirthDate =  new DateTime(1998, 4, 21).ToUniversalTime(), BaseSalary = 1000.0, Department = d1 };
             Seller s2 = new Seller { Name = "Maria Green", Email = "maria@gmail.com", BirthDate =  new DateTime(1979, 12, 31).ToUniversalTime(), BaseSalary = 3500.0, Department = d2 };
             Seller s3 = new Seller { Name = "Alex Grey", Email =  "alex@gmail.com", BirthDate = new DateTime(1988, 1, 15).ToUniversalTime(), BaseSalary = 2200.0, Department = d1 };
             Seller s4 = new Seller{ Name = "Martha Red", Email = "martha@gmail.com", BirthDate = new DateTime(1993, 11, 30).ToUniversalTime(), BaseSalary = 3000.0, Department = d4 };

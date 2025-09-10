@@ -16,6 +16,7 @@ builder.Services.AddDbContext<SalesWebCourseContext>(options =>
 
         builder.Services.AddScoped<SeedingService>();
         builder.Services.AddScoped<SellerService>();
+        builder.Services.AddScoped<DepartmentService>();
 WebApplication app = builder.Build();
 
 // Configure the HTTP request pipeline.
