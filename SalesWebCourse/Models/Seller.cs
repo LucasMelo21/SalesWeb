@@ -8,28 +8,39 @@ namespace SalesWebCourse.Models
         public int Id { get; set; }
 
         [Required(ErrorMessage = "{0} required")]
-        [StringLength(50, MinimumLength = 3, ErrorMessage ="{0} size should be between{2} and {1}")]
+        [StringLength(50, MinimumLength = 3, ErrorMessage = "{0} size should be between {2} and {1}")]
         public string Name { get; set; }
-        [DataType(DataType.EmailAddress)]
+
         [Required(ErrorMessage = "{0} required")]
-        [EmailAddress(ErrorMessage ="Enter a valid email")]
+        [EmailAddress(ErrorMessage = "Enter a valid email")]
         public string Email { get; set; }
+
         [Required(ErrorMessage = "{0} required")]
         [Display(Name = "Birth Date")]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString ="{0:dd/MM/yyyy}")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime BirthDate { get; set; }
 
         [Display(Name = "Base Salary")]
-        [Range(100.0, 50000.0, ErrorMessage = "{0} size must be from{2} to {1}")]
-        [DisplayFormat(DataFormatString ="${0:F2}")]
+        [Range(100.0, 50000.0, ErrorMessage = "{0} size must be from {2} to {1}")]
+        [DisplayFormat(DataFormatString = "${0:F2}")]
         [Required(ErrorMessage = "{0} required")]
         public double BaseSalary { get; set; }
+
         public Department Department { get; set; }
         public int DepartmentId { get; set; }
         public ICollection<SalesRecord> Sales { get; set; } = new List<SalesRecord>();
 
-        public Seller() { }
+        public Seller()
+        {
+            // Inicialização padrão para evitar problemas de validação
+            Name = string.Empty;
+            Email = string.Empty;
+            BirthDate = DateTime.MinValue;
+            BaseSalary = 0.0;
+            DepartmentId = 0;
+            Sales = new List<SalesRecord>();
+        }
         public Seller(int id, string name, string email, DateTime birthDate, double baseSalary, Department department)
         {
             Id = id;

@@ -21,7 +21,6 @@ builder.Services.AddDbContext<SalesWebCourseContext>(options =>
         builder.Services.AddScoped<DepartmentService>();
 WebApplication app = builder.Build();
 
-
 var enUS = new CultureInfo("en-US");
 var localizationOptions = new RequestLocalizationOptions
 {

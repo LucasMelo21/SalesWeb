@@ -1,5 +1,7 @@
 ﻿using SalesWebCourse.Data;
 using SalesWebCourse.Models;
+using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 using System.Linq;
 
 namespace SalesWebCourse.Services
@@ -12,9 +14,9 @@ namespace SalesWebCourse.Services
         {
             _context = context;
         }
-        public List<Department> FindAll()
+        public async Task<List<Department>> FindAllAsync()
         {
-            return _context.Department.OrderBy(x => x.Name).ToList();
+            return await _context.Department.OrderBy(x => x.Name).ToListAsync();
         }
     }
 }

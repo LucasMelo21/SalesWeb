@@ -35,12 +35,13 @@ namespace SalesWebCourse.Data
             _context.Department.AddRange(d1, d2, d3, d4);
             _context.SaveChanges();
 
-            Seller s1 = new Seller { Name = "Bob Brown", Email = "bob@gmail.com", BirthDate =  new DateTime(1998, 4, 21).ToUniversalTime(), BaseSalary = 1000.0, Department = d1 };
-            Seller s2 = new Seller { Name = "Maria Green", Email = "maria@gmail.com", BirthDate =  new DateTime(1979, 12, 31).ToUniversalTime(), BaseSalary = 3500.0, Department = d2 };
-            Seller s3 = new Seller { Name = "Alex Grey", Email =  "alex@gmail.com", BirthDate = new DateTime(1988, 1, 15).ToUniversalTime(), BaseSalary = 2200.0, Department = d1 };
-            Seller s4 = new Seller{ Name = "Martha Red", Email = "martha@gmail.com", BirthDate = new DateTime(1993, 11, 30).ToUniversalTime(), BaseSalary = 3000.0, Department = d4 };
-            Seller s5 = new Seller{ Name = "Donald Blue", Email = "donald@gmail.com", BirthDate = new DateTime(2000, 1, 9).ToUniversalTime(), BaseSalary = 4000.0, Department = d3 };
-            Seller s6 = new Seller{ Name = "Alex Pink", Email = "pink@gmail.com", BirthDate = new DateTime(1997, 3, 4).ToUniversalTime(), BaseSalary = 3000.0, Department = d2 };
+            Seller s1 = new Seller(1, "Bob Brown", "bob@gmail.com", new DateTime(1998, 4, 21).ToUniversalTime(), 1000.0, d1);
+            Seller s2 = new Seller(2, "Maria Green", "maria@gmail.com", new DateTime(1979, 12, 31).ToUniversalTime(), 3500.0, d2);
+            Seller s3 = new Seller(3, "Alex Grey", "alex@gmail.com", new DateTime(1988, 1, 15).ToUniversalTime(), 2200.0, d1);
+            Seller s4 = new Seller(4, "Martha Red", "martha@gmail.com", new DateTime(1993, 11, 30).ToUniversalTime(), 3000.0, d4);
+            Seller s5 = new Seller(5, "Donald Blue", "donald@gmail.com", new DateTime(2000, 1, 9).ToUniversalTime(), 4000.0, d3);
+            Seller s6 = new Seller(6, "Alex Pink", "pink@gmail.com", new DateTime(1997, 3, 4).ToUniversalTime(), 3000.0, d2);
+    
 
             _context.Seller.AddRange(s1, s2, s3, s4, s5, s6);
             _context.SaveChanges();
