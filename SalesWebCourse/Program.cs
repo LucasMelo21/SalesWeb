@@ -19,6 +19,7 @@ builder.Services.AddDbContext<SalesWebCourseContext>(options =>
         builder.Services.AddScoped<SeedingService>();
         builder.Services.AddScoped<SellerService>();
         builder.Services.AddScoped<DepartmentService>();
+        builder.Services.AddScoped<SalesRecordService>();
 WebApplication app = builder.Build();
 
 var enUS = new CultureInfo("en-US");
